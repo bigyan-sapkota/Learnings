@@ -2,7 +2,7 @@
     color:red;
 } */
 
-p{
+/* p{
     color:red;
 }
 
@@ -20,4 +20,36 @@ p{
 
 .underline-h{
     text-decoration: underline;
+} */
+
+/* #bg{
+    background-color:rgb(186, 186, 186);
+} */
+
+/* body{
+    background-color:red;
+} */
+
+/* #bg{
+    /*
+    background-image: url('image/saitama.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;     POSITION NORMAL
+    background-position: 5% 10%;           /* X-axis Y-axis
+    background-size: contain;
+    background-attachment: fixed;
+}
+    */
+
+/* Shortcut
+#bg{
+    background-color: white url(image/saitama.jpg) no-repeat fixed 5% 10%;
+}
+*/
+
+#bg{
+    background-color:yellow;
+    background-image: url('image/3.png'), url('image/4.png');
+    background-repeat: no-repeat;
+    background-position: right bottom, left top;
 }
