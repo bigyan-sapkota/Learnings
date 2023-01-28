@@ -100,10 +100,10 @@
     padding: 10px;
 } */
 
-.div1{
+/* .div1{
     border: 1px solid red;
-    /* padding: 25px 50px 30px 70px; */
-}
+    padding: 25px 50px 30px 70px;
+} */
 
 /* body{
     border: 5px dotted black;
@@ -127,6 +127,23 @@
 #text{
     width: 500px;
     border: 1px solid black;
-    color: blue;
-    text-align: right;
+    writing-mode: vertical-rl;
+    /* word-spacing: 10px;
+    word-wrap: break-word; */
+    /* white-space: pre; */
+    /* text-transform: capitalize; */
+    /* text-indent: 50px;   */
+    /* color: blue;
+    text-align: justify; */
 }
+
+/* 
+#shadow{
+    font-size: 70px;
+    text-shadow: 5px 10px 7px red;
+} */
+
+/* img{
+    border: 1px solid red;
+    vertical-align: middle;
+} */
