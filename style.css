@@ -124,10 +124,10 @@
     margin-bottom: 30px;
 } */
 
-#text{
+/* #text{
     width: 500px;
     border: 1px solid black;
-    writing-mode: vertical-rl;
+    writing-mode: vertical-rl; */
     /* word-spacing: 10px;
     word-wrap: break-word; */
     /* white-space: pre; */
@@ -135,7 +135,7 @@
     /* text-indent: 50px;   */
     /* color: blue;
     text-align: justify; */
-}
+
 
 /* 
 #shadow{
@@ -147,3 +147,24 @@
     border: 1px solid red;
     vertical-align: middle;
 } */
+
+a{
+    text-decoration: none;
+}
+
+a:link{
+    color: yellowgreen;
+}
+
+a:visited{
+    color: black;
+}
+
+a:hover{
+    color: orange;
+}
+
+a:active{
+    color: red;
+}
+ 
