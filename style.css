@@ -109,8 +109,8 @@
     border: 5px dotted black;
 } */
 
-#marg{
-    margin-top: 50px;
+/* #marg{
+    margin-top: 50px; */
     /* margin-top: -50px;
     margin-bottom: 20px;
     margin-left: 60px;
@@ -118,9 +118,15 @@
     /* margin: 25px 12px 50px 60px; */
     /* width: 200px;
     margin: 20px auto; */
-}
+/* }
 
 #colsp{
     margin-bottom: 30px;
-}
+} */
 
+#text{
+    width: 500px;
+    border: 1px solid black;
+    color: blue;
+    text-align: right;
+}
