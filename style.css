@@ -95,7 +95,32 @@
 }
 */
 
-#div1{
+/* #div1{
     border: 2px solid red;
     padding: 10px;
+} */
+
+.div1{
+    border: 1px solid red;
+    /* padding: 25px 50px 30px 70px; */
 }
+
+/* body{
+    border: 5px dotted black;
+} */
+
+#marg{
+    margin-top: 50px;
+    /* margin-top: -50px;
+    margin-bottom: 20px;
+    margin-left: 60px;
+    margin-right: 10%; */
+    /* margin: 25px 12px 50px 60px; */
+    /* width: 200px;
+    margin: 20px auto; */
+}
+
+#colsp{
+    margin-bottom: 30px;
+}
+
