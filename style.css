@@ -1,3 +1,23 @@
+/* p{
+    color:red;
+} */
+
 p{
     color:red;
+}
+
+#p3{
+    color:green;
+}
+
+.green-text {
+    color:blue;
+}
+
+#h{
+    font-size:50px;
+}
+
+.underline-h{
+    text-decoration: underline;
 }
