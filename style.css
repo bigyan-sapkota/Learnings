@@ -1,6 +1,6 @@
-html{
+/* html{
     font-size: 14px;
-}
+} */
 
 /* @font-face{
     font-family: "block ride";
@@ -195,10 +195,23 @@ p{ */
     font: 600 20px 'Open Sans', sans-serif;
 } */
 
-#parent{
+/* #parent{
     font-size: 10vw;
 }
 
 #child{
     font-size: 2rem;
+} */
+
+/* div{
+    border: 1px solid red;
+    cursor: zoom-out;
+} */
+
+div{
+    border: 1px solid red !important;
+}
+
+div{
+    border: 1px solid green;
 }
