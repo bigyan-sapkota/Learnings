@@ -208,10 +208,19 @@ p{ */
     cursor: zoom-out;
 } */
 
-div{
+/* div{
     border: 1px solid red !important;
 }
 
 div{
     border: 1px solid green;
+} */
+
+div{
+    border: 1px solid green; 
+    width: 500px;
+    background-color: yellowgreen;
+    margin: 100px;
+    padding: 20px;
+    box-shadow: 10px 10px 15px 3px grey, -10px 10px 15px 3px red ;
 }
