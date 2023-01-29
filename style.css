@@ -1,3 +1,8 @@
+@font-face{
+    font-family: "block ride";
+    src: url('fonts/block-ride.otf');
+}
+
 /* p{
     color:red;
 } */
@@ -148,7 +153,7 @@
     vertical-align: middle;
 } */
 
-a{
+/* a{
     text-decoration: none;
 }
 
@@ -166,5 +171,22 @@ a:hover{
 
 a:active{
     color: red;
+} */
+
+/* h1{ */
+    /* font-family: 'Montserrat', sans-serif; */
+    /* font-family: "block ride";
+    font-weight: 100;
 }
- 
+
+p{ */
+    /* font-family: 'Open Sans', sans-serif; */
+    /* font-size: 30px; */
+    /* font-size: 30px;
+    font-weight: none; 
+    font-style: italic; */
+/* } */
+
+p{
+    font: 600 20px 'Open Sans', sans-serif;
+}
