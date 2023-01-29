@@ -1,7 +1,11 @@
-@font-face{
+html{
+    font-size: 14px;
+}
+
+/* @font-face{
     font-family: "block ride";
     src: url('fonts/block-ride.otf');
-}
+} */
 
 /* p{
     color:red;
@@ -187,6 +191,14 @@ p{ */
     font-style: italic; */
 /* } */
 
-p{
+/* p{
     font: 600 20px 'Open Sans', sans-serif;
+} */
+
+#parent{
+    font-size: 10vw;
+}
+
+#child{
+    font-size: 2rem;
 }
