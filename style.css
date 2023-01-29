@@ -240,6 +240,13 @@ div{
     opacity: 0.5;
 } */
 
-img{
+/* img{
     filter: brightness(80%), contrast(100%), blur(3px);
+} */
+
+#sprite{
+    height: 180px;
+    background-image: url('image/sprite.png');
+    background-repeat: no-repeat;
+    background-position: 0px -380px;
 }
