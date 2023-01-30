@@ -1,8 +1,8 @@
-:root{
+/* :root{
     --primary-color: red;
     --button-color: lightblue;
     --text-color: black;
-}
+} */
 
 /* html{
     font-size: 14px;
@@ -325,7 +325,7 @@ td{
     vertical-align: middle;
 } */
 
-#func{
+/* #func{
     background-color: var(--primary-color);
     height: 200px;
     width: calc(100% - 200px);
@@ -337,4 +337,19 @@ a{
     background-color: var(--button-color);
     color: var(--text-color);
     text-decoration: none;
+} */
+
+#div1{
+    background-color: blueviolet;
+    width:600px;
+    height: 150px;
+}
+
+#div2{
+    background-color: chocolate;
+    width: 600px;
+    height: 150px;
+    padding: 50px;
+    border: 10px solid black;
+    box-sizing: border-box;
 }
