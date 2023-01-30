@@ -266,4 +266,11 @@ div{
     width: 500px;
     height: 300px;
     overflow: auto;
+    resize: vertical;
 }
+
+/*Css resizable*/
+
+/* textarea{
+    resize: none;
+} */
