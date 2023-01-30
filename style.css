@@ -244,9 +244,15 @@ div{
     filter: brightness(80%), contrast(100%), blur(3px);
 } */
 
-#sprite{
+/* #sprite{
     height: 180px;
     background-image: url('image/sprite.png');
     background-repeat: no-repeat;
     background-position: 0px -380px;
+} */
+
+#div1{
+    border: 1px solid grey;
+    height: 500px;
+    background-image: radial-gradient(circle,green 20%, blue 30%, yellow 50%);
 }
