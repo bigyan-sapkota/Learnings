@@ -354,7 +354,7 @@ a{
     box-sizing: border-box;
 } */
 
-#green{
+/* #green{
     color: green;
 }
 
@@ -368,4 +368,12 @@ a{
 
 #inherit{
     color: inherit;
+} */
+
+img{
+    border: 1px solid red;
+    width: 500px;
+    height: 400px;
+    object-fit: contain;
+    object-position: right;
 }
