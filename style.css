@@ -260,17 +260,31 @@ div{
 
 
 /*Css Overflow*/
-#overflow{
+/* #overflow{
     background-color: whitesmoke;
     border: 1px solid red;
     width: 500px;
     height: 300px;
     overflow: auto;
     resize: vertical;
-}
+} */
 
 /*Css resizable*/
 
 /* textarea{
     resize: none;
 } */
+
+ul{
+    margin-left: -30px;
+    list-style-type: disc;
+    list-style-position: inside;
+}
+
+ol{
+    list-style-type: decimal-leading-zero;
+}
+
+li{
+    border: 1px solid black;
+}
