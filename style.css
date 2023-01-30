@@ -1,3 +1,9 @@
+:root{
+    --primary-color: red;
+    --button-color: lightblue;
+    --text-color: black;
+}
+
 /* html{
     font-size: 14px;
 } */
@@ -290,8 +296,8 @@ li{
     border: 1px solid black;
 } */
 
-
-table{
+/*CSS Table*/
+/* table{
     border: 1px solid black;
     border-collapse: collapse;
     empty-cells: hide;
@@ -317,4 +323,18 @@ td{
     padding: 5px;
     text-align: left;
     vertical-align: middle;
+} */
+
+#func{
+    background-color: var(--primary-color);
+    height: 200px;
+    width: calc(100% - 200px);
+}
+
+a{
+    padding: 10px 30px;
+    margin: 20px;
+    background-color: var(--button-color);
+    color: var(--text-color);
+    text-decoration: none;
 }
