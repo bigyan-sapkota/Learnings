@@ -377,3 +377,12 @@ a{
     object-fit: contain;
     object-position: right;
 } */
+
+/* Pseudo-Classes */
+/* li:nth-last-child(2){
+    color: red;
+}
+
+input:focus{
+    border: 3px solid red;
+} */
