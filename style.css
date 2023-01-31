@@ -389,7 +389,7 @@ input:focus{
 
 /* Pseudo-Element*/
 
-p::first-line{
+/* p::first-line{
     font-size: 35px;
     color: red;
 }
@@ -405,4 +405,24 @@ h1::after{
 ::selection{
     color: red;
     background: yellow;
+} */
+
+/* DISPALY : 
+block(div, p, heading): new line, full width, height and width applicable
+inline(a, img, span): not new start, takes width necessarily, no height and width 
+inline-block: not new start, no full width, height and width applicable
+none 
+*/
+
+/* .display{
+    border: 1px solid red;
+    width: 50%;
+    height: 100px;
+    display: inline-block;
 }
+
+#div1{ */
+    /* display: none; */
+    /* visibility: hidden;
+    height: 500px; */
+/* } */
