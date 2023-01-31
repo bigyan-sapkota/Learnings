@@ -386,3 +386,23 @@ a{
 input:focus{
     border: 3px solid red;
 } */
+
+/* Pseudo-Element*/
+
+p::first-line{
+    font-size: 35px;
+    color: red;
+}
+
+h1::before{
+    content: url('image/saitama.jpg');
+}
+
+h1::after{
+    content: " added after";
+}
+
+::selection{
+    color: red;
+    background: yellow;
+}
