@@ -561,7 +561,7 @@ a{
     display: inline-block;
 } */
 
-#div1{
+/* #div1{
     height: 100px;
     width: 100px;
     background-color: red;
@@ -574,4 +574,22 @@ a{
 #div1:hover{
     width: 200px;
     background-color: green;
+} */
+
+@media screen{
+    p{
+        font-size: 20px;
+    }
+}
+
+@media print{
+    p{
+        font-size: 30px;
+    }
+    img{
+        display: none;
+    }
+    div{
+        width: 50%;
+    }
 }
