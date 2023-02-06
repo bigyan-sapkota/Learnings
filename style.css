@@ -436,12 +436,12 @@ Absoulte
         top, bottom, :left, right
 */
 
-#parent{
+/* #parent{
     padding: 20px;
     width: 50%;
-    margin: 100px;
+    margin: 100px; */
     /* position: relative; */
-}
+/* }
 
 #one{
     width: 100px;
@@ -472,4 +472,70 @@ Absoulte
     top: 100px;
     left: -100px;
     z-index: 1;
+} */
+
+/* img{
+    width: 100px;
+    height: auto;
+    padding: 10px;
+}
+
+#img1{
+    float: right;
+}
+
+#img2{
+    float: left;
+} */
+
+/* ul{
+    background-color: green;
+    list-style-type: none;
+    border: 1px solid red;
+    overflow: auto;
+}
+
+li{
+    color:white;
+    padding: 10px 15px;
+    float: left;
+} */
+
+/* p{
+    border: 1px solid red;
+    overflow: auto;
+}
+
+img{
+    float: right;
+    width: 100px;
+    height: auto;
+}
+
+#img1{
+    float: right;
+}
+
+#img2{
+    float: right;
+    clear: right;
+} */
+
+#content{
+    width: 70%;
+    background-color: green;
+    height: 200px;
+    float: left;
+}
+
+#sidebar{
+    width: 30%;
+    background-color: indianred;
+    height: 150px;
+    float: right;
+}
+
+#footer{
+    background-color: yellowgreen;
+    clear: both;
 }
