@@ -560,3 +560,18 @@ a{
     transform: scaleX(0.8);
     display: inline-block;
 } */
+
+#div1{
+    height: 100px;
+    width: 100px;
+    background-color: red;
+    margin: 100px;
+    transition-property: all;
+    transition-duration: 1s;
+    transition-timing-function: ease-in-out;
+}
+
+#div1:hover{
+    width: 200px;
+    background-color: green;
+}
