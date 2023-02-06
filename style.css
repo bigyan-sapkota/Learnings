@@ -576,7 +576,7 @@ a{
     background-color: green;
 } */
 
-@media screen{
+/* @media screen{
     p{
         font-size: 20px;
     }
@@ -592,4 +592,4 @@ a{
     div{
         width: 50%;
     }
-}
+} */
