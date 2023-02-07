@@ -49,7 +49,7 @@ a:hover{
     color: red;
 } */
 
-div{
+/* div{
     column-count: 3;
     column-gap: 50px;
     column-rule: 1px solid red;
@@ -58,4 +58,37 @@ div{
 
 h1{
     column-span: all;
+} */
+
+.flex-container{
+    background-color: indianred;
+    display: flex;
+    height: 400px;
+    /* height: 70vh;
+    flex-wrap: wrap; */
+    /* flex-direction: column-reverse; */    
+    /* flex-flow: row wrap; */
+    /* justify-content: center;    
+    align-items: center; */
+    /* align-content: flex-start; */
+}
+
+.flex-child{
+    background-color:wheat;
+    margin: 20px;
+    padding: 20px;
+    width: 100px;
+    text-align: center;
+}
+
+#one{
+    align-self: flex-start;
+}
+
+#two{
+    align-self: center;
+}
+
+#three{
+    align-self: flex-end;
 }
