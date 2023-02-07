@@ -45,6 +45,17 @@ a:hover{
     color: red;
 } */
 
-h1,p{
+/* h1,p{
     color: red;
+} */
+
+div{
+    column-count: 3;
+    column-gap: 50px;
+    column-rule: 1px solid red;
+    column-width: 300px;
+}
+
+h1{
+    column-span: all;
 }
