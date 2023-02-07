@@ -1,0 +1,50 @@
+/* li{
+    color: red;
+} */
+
+/* .list5{
+    color: red;
+} */
+/* 
+a:hover{
+    color: black;
+} */
+
+/* p::first-line{
+    color: red;
+} */
+
+
+                        /* //ATTRIBUTE SELECTOR */
+/* a[href="https://www.google.com"]{
+    color: red;
+} */
+
+/* input[type="password"]{
+
+} */
+
+/* *{
+    border: 1px solid red;
+} */
+
+                        /* //ADJACENT SIBLING */
+
+/* div a{
+    color: red;
+} */
+
+
+/* JUST AFTER */
+/* div + a{
+    color: red;
+} */
+
+/* all siblings */
+/* div ~ a{
+    color: red;
+} */
+
+h1,p{
+    color: red;
+}
