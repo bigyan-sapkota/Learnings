@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ArrowFunction</title>
+  </head>
+  <body>
+    <p id="demo"></p>
+    <button id="btn">Click Me</button>
+    <script>
+      hello = (val) => "HEY!" + val;
+      //   document.getElementById("demo").innerHTML = hello(" World..");
+
+      class Header {
+        consturctor() {
+          this.color = "Red";
+        }
+
+        changeColor = function () {
+          document.getElementById("demo").innerHTML += this;
+        };
+      }
+
+      //   const myHeader = new Header();
+      //   //   The window object calls the function
+      //   window.addEventListener("load", myHeader.changeColor);
+
+      //   //A button object calls the function:
+      //   document
+      //     .getElementById("btn")
+      //     .addEventListener("click", myHeader.changeColor);
+
+      class Header1 {
+        constructor() {
+          this.color = "Red";
+        }
+
+        changeColor1 = () => {
+          document.getElementById("demo").innerHTML += this;
+        };
+      }
+
+      const myHeader = new Header1();
+
+      //   the window object calls the function:
+      window.addEventListener("load", myHeader.changeColor1);
+
+      // A button object Calls the function:
+      document
+        .getElementById("btn")
+        .addEventListener("click", myHeader.changeColor1);
+    </script>
+  </body>
+</html>

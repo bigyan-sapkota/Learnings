@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Destructing</title>
+  </head>
+  <body>
+    <p id="demo"></p>
+    <script>
+      // Assigning items to a variable
+      //   const vehicles = ["mustang", "f-150", "expedition"];
+      //   const [car, truck, suv] = vehicles;
+
+      //   const vehicles = ["mustang", "f-150", "expedition"];
+      //   const [car, , name] = vehicles;
+
+      //   document.getElementById("demo").innerHTML = car + " " + name;
+
+      //   function calculate(a, b) {
+      //     const add = a + b;
+      //     const subtract = a - b;
+      //     const multiply = a * b;
+      //     const divide = a / b;
+
+      //     return [add, subtract, multiply, divide];
+      //   }
+
+      //   const [add, subtract, multiply, divide] = calculate(10, 2);
+      //   document.write(add, subtract, multiply, divide);
+
+      const vehicleOne = {
+        brand: "Ford",
+        model: "Mustang",
+        registration: {
+          city: "Bharatpur",
+        },
+        year: 2021,
+      };
+
+      const result = ({ brand, registration: { city } }) => {
+        document.write("My " + brand + " runs in " + city + " city.");
+      };
+
+      result(vehicleOne);
+
+      //   Old way
+      //   function myVehicle(vehicle) {
+      //     const message =
+      //       "My " +
+      //       vehicle.type +
+      //       " is a " +
+      //       vehicle.brand +
+      //       " of year: " +
+      //       vehicle.year;
+      //     document.write(message);
+      //   }
+
+      //   New way
+      //   function myVehicle({ type, brand, model, year }) {
+      //     const message = "My " + type + " is hot made on " + year;
+      //     document.write(message);
+      //   }
+      //   myVehicle(vehicleOne);
+
+      //   Destructing an object deep
+    </script>
+  </body>
+</html>

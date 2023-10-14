@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p id="demo"></p>
+    <script>
+      const fruits = ["apple", "banana", "mango", "grapes"];
+      const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+      const jsonarr = [
+        {
+          id: 1,
+          name: "Bigyan",
+        },
+        {
+          id: 0,
+          name: "Sapkota",
+        },
+        {
+          id: 2,
+          name: "PallaGhareKaila",
+        },
+      ];
+      //   let result = fruits.map((fruit, i) => {
+      //     const j = i + 1;
+      //     const list = j + "." + fruit;
+      //     return list;
+      //   });
+
+      //   const result1 = numbers.filter((number) => number > 5);
+      //   const result2 = fruits.filter((fruit) => fruit.length > 5);
+
+      const result = jsonarr.filter((poid) => poid.id == 0);
+      document.getElementById("demo").innerHTML = result;
+    </script>
+  </body>
+</html>
