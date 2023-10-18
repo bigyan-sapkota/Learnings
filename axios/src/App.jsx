@@ -2,12 +2,14 @@ import { useEffect, useState } from "react";
 import "./App.css";
 import axios from "axios";
 
+const API = "https://jsonplaceholder.typicode.com";
+
 // NOTE: Using Promises
 // const [data, setData] = useState([]);
 // const [isError, setIsError] = useState("");
 // useEffect(() => {
 //   axios
-//     .get("https://jsonplaceholder.typicode.com/poss")
+//     .get(URL)
 //     .then((res) => setData(res.data))
 //     .catch((error) => setIsError(error.message));
 // }, []);
@@ -24,7 +26,7 @@ function App() {
 
   const getApiData = async () => {
     try {
-      const res = await axios.get("https://jsonplaceholder.typicode.com/posts");
+      const res = await axios.get("/posts");
       setData(res.data);
     } catch (error) {
       setIsError(error.message);
