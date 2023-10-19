@@ -9,6 +9,8 @@ export default function App() {
     <div>
       <button onClick={() => setCurrentPage(<PostList1 />)}>Post List 1</button>
       <button onClick={() => setCurrentPage(<PostList2 />)}>Post List 2</button>
+      <br />
+      {currentPage}
     </div>
   );
 }

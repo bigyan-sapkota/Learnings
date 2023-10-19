@@ -14,11 +14,13 @@ const PostList2 = () => {
 
   return (
     <>
-      <h1>Posts List 1</h1>
+      <h1>Posts List 2</h1>
       <ol>
-        {postsQuery.data.map((post) => (
-          <li key={post.id}>{post.title}</li>
-        ))}
+        {postsQuery.data ? (
+          postsQuery.data.map((post) => <li key={post.id}>{post.title}</li>)
+        ) : (
+          <h1>No Data Available</h1>
+        )}
       </ol>
     </>
   );
