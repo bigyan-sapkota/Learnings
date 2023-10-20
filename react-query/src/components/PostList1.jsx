@@ -5,15 +5,12 @@ const PostList1 = () => {
   const postsQuery = useQuery({
     queryKey: ["posts"],
     queryFn: getPosts,
+    refetchInterval: 1000,
   });
 
   if (postsQuery.status === "loading") return <h1>Loading...</h1>;
   if (postsQuery.status === "error") {
     return <pre>{JSON.stringify(postsQuery.error)}</pre>;
-  }
-
-  if (!Array.isArray(postsQuery.data)) {
-    return <p>No data available</p>;
   }
 
   return (
