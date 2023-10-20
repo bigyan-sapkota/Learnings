@@ -1,15 +1,10 @@
-"use client";
-import React, { useState } from "react";
-import Header from "@/Components/Header";
+import React from "react";
 
 const page = () => {
-  const [user, setUser] = useState("Bigyan");
-  const [editor, setEditor] = useState("Aakash");
   return (
-    <>
-      <Header user={user} editor={editor} />
-      {user}
-    </>
+    <div>
+      <h1 className="text-4xl font-bold">This is Home Page</h1>
+    </div>
   );
 };
 
