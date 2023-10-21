@@ -1,9 +1,13 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 const page = () => {
   const [Images, setImages] = useState([]);
+
+  useEffect(() => {
+    getImages;
+  }, []);
 
   const getImages = async () => {
     try {
@@ -24,9 +28,17 @@ const page = () => {
         Get Images
       </button>
 
-      <div>
+      <div className="p-10">
         {Images.map((img, i) => (
-          <div key={i}>{img.author}</div>
+          <div key={i}>
+            <img
+              src={img.download_url}
+              alt=""
+              width={300}
+              height={300}
+              className="m-10 rounded-lg inline-block"
+            />
+          </div>
         ))}
       </div>
     </div>
