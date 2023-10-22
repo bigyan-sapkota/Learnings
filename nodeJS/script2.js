@@ -1,3 +1,2 @@
-const data = require("./script");
-
-console.log(data.first);
+var data = require("./script");
+console.log(data);
