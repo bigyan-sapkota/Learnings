@@ -1,15 +1,17 @@
 "use client";
 import Header from "@/Components/Header";
-import Nav from "@/Components/Nav";
+import { MyContext } from "@/Helper/Context";
 import axios from "axios";
 import Link from "next/link";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 
 const page = () => {
+  const user = useContext(MyContext);
+
   return (
     <>
       <Header />
-      <Nav />
+      {user}
     </>
   );
 };
@@ -33,6 +35,7 @@ export default page;
         />
       </form> */
 }
+
 {
   /* <h1 className="text-2xl font-bold">This is Home Page.</h1>
       <Link href="/Contact">Contact</Link> */
