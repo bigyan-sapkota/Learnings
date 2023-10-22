@@ -1,30 +1,23 @@
 "use client";
-import React from "react";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import React, { useState } from "react";
+import axios from "axios";
 
 const page = () => {
-  const notify = () => {
-    toast.success("🦄 Wow so easy!", {
-      position: "top-center",
-      autoClose: 5000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "dark",
-    });
+  const [userdata, setUserdata] = useState("");
+  const getData = async () => {
+    const res = await axios.get("https://picsum.photos/v2/list");
+    setUserdata(JSON.stringify(res.data));
   };
   return (
     <div>
       <button
-        onClick={notify}
-        className="px-5 py-2 bg-green-700 text-white rounded border-black"
+        onClick={getData}
+        className="px-3 py-2 text-white bg-black rounded"
       >
-        Login
+        Click
       </button>
-      <ToastContainer />
+      <br />
+      <div className="bg-slate-400 p-5 mt-4">{userdata}</div>
     </div>
   );
 };
@@ -102,6 +95,40 @@ export default page;
 //       <Header />
 //       {user}
 //     </>
+//   );
+// };
+
+// export default page;
+
+// TOASTIFY:
+// "use client";
+// import React from "react";
+// import { ToastContainer, toast } from "react-toastify";
+// import "react-toastify/dist/ReactToastify.css";
+
+// const page = () => {
+//   const notify = () => {
+//     toast.success("🦄 Wow so easy!", {
+//       position: "top-center",
+//       autoClose: 5000,
+//       hideProgressBar: false,
+//       closeOnClick: true,
+//       pauseOnHover: true,
+//       draggable: true,
+//       progress: undefined,
+//       theme: "dark",
+//     });
+//   };
+//   return (
+//     <div>
+//       <button
+//         onClick={notify}
+//         className="px-5 py-2 bg-green-700 text-white rounded border-black"
+//       >
+//         Login
+//       </button>
+//       <ToastContainer />
+//     </div>
 //   );
 // };
 
