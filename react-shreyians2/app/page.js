@@ -1,18 +1,31 @@
 "use client";
-import Header from "@/Components/Header";
-import { MyContext } from "@/Helper/Context";
-import axios from "axios";
-import Link from "next/link";
-import React, { useEffect, useState, useContext } from "react";
+import React from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const page = () => {
-  const user = useContext(MyContext);
-
+  const notify = () => {
+    toast.success("🦄 Wow so easy!", {
+      position: "top-center",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+    });
+  };
   return (
-    <>
-      <Header />
-      {user}
-    </>
+    <div>
+      <button
+        onClick={notify}
+        className="px-5 py-2 bg-green-700 text-white rounded border-black"
+      >
+        Login
+      </button>
+      <ToastContainer />
+    </div>
   );
 };
 
@@ -72,3 +85,24 @@ export default page;
 //       </div>
 //     </>
 //   );
+
+// FOR USECONTEXT:
+// "use client";
+// import Header from "@/Components/Header";
+// import { MyContext } from "@/Helper/Context";
+// import axios from "axios";
+// import Link from "next/link";
+// import React, { useEffect, useState, useContext } from "react";
+
+// const page = () => {
+//   const user = useContext(MyContext);
+
+//   return (
+//     <>
+//       <Header />
+//       {user}
+//     </>
+//   );
+// };
+
+// export default page;
