@@ -1,3 +1,19 @@
+// Use case of express :
+// -> Routing(GET, POST, PUT, PATCH, DELETE),
+
+const express = require("express");
+const app = express();
+
+app.get("/", function (req, res) {
+  res.send("Hello!");
+});
+
+app.get("/profile", function (req, res) {
+  res.send("This is your profile");
+});
+
+app.listen(3000);
+
 // NPM contain many packages which can be used by us to save our time.
 // nmp i <packageName> can be used to install a package.
 
