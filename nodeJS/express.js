@@ -4,6 +4,8 @@
 const express = require("express");
 const app = express();
 
+app.set("view engine", "ejs");
+
 // Middleware - The function which runs/executes code just before routing.
 // The problem in node Js middleware is that, once a middleware takes control it won't go to another route/middlware. So for pushing the contorl to next route next() is used.
 // Req contains all the incoming request data like location, device details.
@@ -20,12 +22,16 @@ const app = express();
 
 // Routing
 app.get("/", function (req, res) {
-  res.send("Hello World!");
+  res.render("index");
 });
 
-app.get("/profile", function (req, res) {
-  res.send("Hello from profile");
+app.get("/contact", function (req, res) {
+  res.render("contact");
 });
+
+// app.get("/profile", function (req, res) {
+//   res.send("Hello from profile");
+// });
 
 app.listen(3000);
 

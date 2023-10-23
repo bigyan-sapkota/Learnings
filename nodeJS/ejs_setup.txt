@@ -1,0 +1,5 @@
+1)Install ejs: npm i ejs
+2)Configure ejs: app.set("view engine", "ejs");
+3)Create a views folder.
+4)Create an ejs file inside it.
+5)Render instead of send. Make sure you are using file inside views folder and in render function don't mention .ejs

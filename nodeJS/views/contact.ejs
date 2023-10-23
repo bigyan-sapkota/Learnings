@@ -1,0 +1,123 @@
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
+/>
+
+<link
+  href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
+  rel="stylesheet"
+/>
+
+<style type="text/css">
+  body {
+    font-family: "Roboto", sans-serif;
+    font-size: 18px;
+  }
+
+  .container {
+    width: 100%;
+    display: flex;
+  }
+
+  .left,
+  .right {
+    height: 50vh;
+    flex: 1;
+    border: 1px dotted blue;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+  }
+
+  .video {
+    max-width: 100%;
+    height: 100%;
+    width: 100%;
+  }
+
+  .rightimg {
+    max-width: 100%;
+    height: 100%;
+    width: 100%;
+  }
+
+  .right > div {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .writeup {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  /* If the screen size is 601px wide or more, set the font-size of <div> to 80px */
+  @media screen and (min-width: 801px) {
+    body {
+      font-size: 18px;
+    }
+  }
+
+  /* If the screen size is 600px wide or less, set the font-size of <div> to 30px */
+  @media screen and (max-width: 800px) {
+    body {
+      font-size: 14px;
+    }
+  }
+</style>
+
+<div class="container">
+  <div class="left">
+    <!-- Refer https://codepen.io/nathan-sr/pen/KKrzeEL for Font Awesome Icon Syntax -->
+
+    <p class="writeup">
+      <i class="fa fa-edit" style="font-size: 30px; color: blue"></i> CodePen is
+      a social development environment. At its heart, it allows you to write
+      code in the browser, and see the results of it as you build. A useful and
+      liberating online code editor for developers of any skill, and
+      particularly empowering for people learning to code. We focus primarily on
+      front-end languages like HTML, CSS, JavaScript, and preprocessing syntaxes
+      that turn into those things.
+    </p>
+  </div>
+  <div class="right">
+    <div>
+      <video
+        class="video"
+        poster="https://cdn.jsdelivr.net/gh/linuxguist/bizpage@main/assets/img/portfolio/poster.png"
+        playsinline
+        loop
+        autoplay
+        muted
+      >
+        <source
+          src="https://cdn.jsdelivr.net/gh/linuxguist/bizpage@main/assets/img/portfolio/theater.mp4"
+          type="video/mp4"
+        />
+      </video>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="left">
+    <p class="writeup">
+      <i class="fa fa-user-graduate" style="font-size: 30px; color: blue"></i>
+      People use CodePen for all sorts of things: prototyping new ideas, reduced
+      test cases for bugs, sending clients things to look at, evaluating
+      potential hires, to finding inspiration. People also use CodePen as a sort
+      of resume and portfolio, showing off their best design and development
+      work.
+    </p>
+  </div>
+  <div class="right">
+    <div>
+      <img
+        class="rightimg"
+        src="https://cdn.jsdelivr.net/gh/linuxguist/bizpage@main/assets/img/portfolio/web3.jpg"
+      />
+    </div>
+  </div>
+</div>
