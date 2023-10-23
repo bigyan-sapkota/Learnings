@@ -1,3 +1,0 @@
-Node vs Express - Node is the main thing where we run express code. Express JS helps to code
-in easier way. HTTP is difficult to use, so express is used to make it easier.
-
