@@ -4,6 +4,19 @@
 const express = require("express");
 const app = express();
 
+// Middleware is a function which runs before route. So if you want to run something before route, you can use middleware.
+// If middleware keeps running, the router gets jammed and there is problem in routing. So next() is used
+app.use(function (req, res, next) {
+  console.log("Hello from MiddleWare!");
+  //   This next is to move to second middleware
+  next();
+});
+
+app.use(function (req, res, next) {
+  console.log("Middleware 2!");
+  next();
+});
+
 app.get("/", function (req, res) {
   res.send("Hello!");
 });
