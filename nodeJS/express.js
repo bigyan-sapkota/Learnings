@@ -5,6 +5,7 @@ const express = require("express");
 const app = express();
 
 app.set("view engine", "ejs");
+app.use(express.static("./public"));
 
 // Middleware - The function which runs/executes code just before routing.
 // The problem in node Js middleware is that, once a middleware takes control it won't go to another route/middlware. So for pushing the contorl to next route next() is used.
@@ -22,11 +23,12 @@ app.set("view engine", "ejs");
 
 // Routing
 app.get("/", function (req, res) {
-  res.render("index");
+  res.render("index", { age: 12 });
 });
 
+// TEMPLATE ENGINE(a markup style which will later gets converted into HTML.) like ejs can be used as HTML
 app.get("/contact", function (req, res) {
-  res.render("contact");
+  res.render("contact", { name: "Bigyan" });
 });
 
 // app.get("/profile", function (req, res) {
