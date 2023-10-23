@@ -31,9 +31,22 @@ app.get("/contact", function (req, res) {
   res.render("contact", { name: "Bigyan" });
 });
 
+app.get("/error", function (req, res, next) {
+  throw Error("Something went wrong.");
+});
 // app.get("/profile", function (req, res) {
 //   res.send("Hello from profile");
 // });
+
+// Error Handling:
+
+app.use(function errorHandler(err, req, res, next) {
+  if (res.headersSent) {
+    return next(err);
+  }
+  res.status(500);
+  res.render("error", { error: err });
+});
 
 app.listen(3000);
 
