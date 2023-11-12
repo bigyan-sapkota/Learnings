@@ -1,10 +1,10 @@
 import React from "react";
-import Effect from "../Hooks/Effect";
+import Memo from "../Hooks/Memo";
 
 const Main = () => {
   return (
     <div>
-      <Effect />
+      <Memo />
     </div>
   );
 };
