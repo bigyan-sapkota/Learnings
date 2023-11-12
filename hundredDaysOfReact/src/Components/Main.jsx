@@ -1,10 +1,10 @@
 import React from "react";
-import Memo from "../Hooks/Memo";
+import Callback from "../Hooks/Callback";
 
 const Main = () => {
   return (
     <div>
-      <Memo />
+      <Callback />
     </div>
   );
 };
