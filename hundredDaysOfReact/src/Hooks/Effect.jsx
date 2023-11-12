@@ -1,3 +1,41 @@
+// DAY-2
+import { useState, useEffect } from "react";
+
+const Effect = () => {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    // The code we want to run
+    console.log("The count is:", count);
+    // Optional return function
+
+    return () => {
+      console.log("I am being cleaned up");
+    };
+  }, [count]);
+  //   The next one is the dependencies array
+
+  return (
+    <div>
+      <h1>Count:{count}</h1>
+      <button
+        onClick={() => setCount(count - 1)}
+        className="px-10 py-2 bg-purple-600 rounded text-white mr-10"
+      >
+        Decrease
+      </button>
+      <button
+        onClick={() => setCount(count + 1)}
+        className="px-10 py-2 bg-purple-600 rounded text-white"
+      >
+        Increase
+      </button>
+    </div>
+  );
+};
+
+export default Effect;
+// DAY-1
 // import React from "react";
 // import { useState, useEffect } from "react";
 
