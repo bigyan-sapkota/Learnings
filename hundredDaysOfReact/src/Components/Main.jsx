@@ -1,10 +1,10 @@
 import React from "react";
-import Myreducer from "../Hooks/Myreducer";
+import ShoppingCart from "../Hooks/ShoppingCart";
 
 const Main = () => {
   return (
     <div>
-      <Myreducer />
+      <ShoppingCart />
     </div>
   );
 };
