@@ -1,9 +1,9 @@
-import React from "react";
-import { useUserContext } from "./context";
+// import React from "react";
+// import { useUserContext } from "./context";
 
-const Profile = () => {
-  const user = useUserContext();
-  return <div>{user.name}</div>;
-};
+// const Profile = () => {
+//   const user = useUserContext();
+//   return <div>{user.name}</div>;
+// };
 
-export default Profile;
+// export default Profile;

@@ -1,13 +1,7 @@
 import React from "react";
 
-import Mycontext from "../Hooks/Mycontext";
-
 const Main = () => {
-  return (
-    <div>
-      <Mycontext />
-    </div>
-  );
+  return <div></div>;
 };
 
 export default Main;

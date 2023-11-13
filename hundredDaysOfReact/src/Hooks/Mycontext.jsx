@@ -1,15 +1,17 @@
-import React from "react";
-import { DashboardContext } from "./context";
+// import React, { useState } from "react";
+// import { DashboardContext } from "./context";
+// import Dashboard from "./Dashboard"; // Assuming Dashboard is imported from the correct path
 
-const Mycontext = () => {
-  const [user] = useState < User > { isSubscribed: true, name: "You" };
-  return (
-    <div>
-      <DashboardContext.Provider value={user}>
-        <Dashboard />
-      </DashboardContext.Provider>
-    </div>
-  );
-};
+// const MyContext = () => {
+//   const [user] = useState({ isSubscribed: true, name: "You" });
 
-export default Mycontext;
+//   return (
+//     <div>
+//       <DashboardContext.Provider value={user}>
+//         <Dashboard />
+//       </DashboardContext.Provider>
+//     </div>
+//   );
+// };
+
+// export default MyContext;
