@@ -1,10 +1,11 @@
 import React from "react";
-import Callback from "../Hooks/Callback";
+
+import Mycontext from "../Hooks/Mycontext";
 
 const Main = () => {
   return (
     <div>
-      <Callback />
+      <Mycontext />
     </div>
   );
 };
