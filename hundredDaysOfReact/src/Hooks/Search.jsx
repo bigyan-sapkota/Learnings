@@ -2,6 +2,7 @@ import React from "react";
 import { memo } from "react";
 
 const Search = ({ onChange }) => {
+  console.log("Search rendered");
   return (
     <div>
       <input

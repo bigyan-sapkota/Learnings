@@ -1,5 +1,5 @@
 import React from "react";
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import Search from "./Search";
 
 const allUsers = ["john", "alex", "george", "simon", "james"];
@@ -7,10 +7,14 @@ const allUsers = ["john", "alex", "george", "simon", "james"];
 const Callback = () => {
   const [users, setUsers] = useState(allUsers);
 
-  const handleSearch = (text) => {
-    const filteredUsers = allUsers.filter((user) => user.includes(text));
-    setUsers(filteredUsers);
-  };
+  const handleSearch = useCallback(
+    (text) => {
+      console.log(users[0]);
+      const filteredUsers = allUsers.filter((user) => user.includes(text));
+      setUsers(filteredUsers);
+    },
+    [users]
+  );
 
   const shuffle = (array) => {
     const shuffledArray = [...array]; // Create a copy to avoid mutating the original array
