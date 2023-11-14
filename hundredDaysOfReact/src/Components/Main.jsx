@@ -1,10 +1,10 @@
 import React from "react";
-import ShoppingCart from "../Hooks/ShoppingCart";
+import Todolist from "../Hooks/TodoList";
 
 const Main = () => {
   return (
     <div>
-      <ShoppingCart />
+      <Todolist />
     </div>
   );
 };
