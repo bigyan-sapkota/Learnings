@@ -26,25 +26,30 @@ const Todolist = () => {
   };
 
   return (
-    <div>
+    <div className="m-20">
       <h2>To-Do List</h2>
 
       <ul>
         {todos.map((todo, index) => (
-          <li key={index}>
+          <li key={index} className="flex gap-4 my-4">
             {todo}
-            <button onClick={() => removeTodo(index)}>Remove</button>
+            <button onClick={() => removeTodo(index)} className="btn">
+              Remove
+            </button>
           </li>
         ))}
       </ul>
 
-      <div>
+      <div className="flex gap-4">
         <input
           type="text"
           value={newTodo}
           onChange={(e) => setNewTodo(e.target.value)}
+          className="inpt"
         />
-        <button onClick={addTodo}>Add</button>
+        <button onClick={addTodo} className="btn">
+          Add
+        </button>
       </div>
       <p>Total Todos: {todos.length}</p>
     </div>

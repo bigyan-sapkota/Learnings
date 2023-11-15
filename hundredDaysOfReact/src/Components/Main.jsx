@@ -1,10 +1,10 @@
 import React from "react";
-import Todolist from "../Hooks/TodoList";
+import Colormanager from "../Hooks/Colormanager";
 
 const Main = () => {
   return (
     <div>
-      <Todolist />
+      <Colormanager />
     </div>
   );
 };
