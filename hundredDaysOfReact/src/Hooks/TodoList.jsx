@@ -9,41 +9,44 @@
 import React, { useState } from "react";
 
 const Todolist = () => {
-  const [todo, setTodo] = useState([
-    {
-      id: 1,
-      task: "Buy Vegetables",
-    },
-    { id: 2, task: "Clean room" },
-    { id: 3, task: "Wash clothes" },
-  ]);
-  const [numberOfTask, setNumberOfTask] = useState(3);
-  const [newTask, setNewTask] = useState("");
+  const [todos, setTodos] = useState([]);
+  const [newTodo, setNewTodo] = useState("");
 
-  const inputHandler = (e) => {
-    setNewTask(e.target.value);
-    console.log(newTask);
+  const addTodo = () => {
+    if (newTodo !== "") {
+      setTodos([...todos, newTodo]);
+      setNewTodo("");
+    }
+  };
+
+  const removeTodo = (index) => {
+    const updatedTodo = [...todos];
+    updatedTodo.splice(index, 1);
+    setTodos(updatedTodo);
   };
 
   return (
     <div>
-      <div className="m-10">
-        {/* Show List Item with delete button */}
-        <div>
-          <h1 className="font-bold text-xl mb-4">Your Tasks</h1>
-          {todo.map((item, i) => (
-            <div key={i} className="w-1/5 flex justify-between mb-4">
-              <div>{item.task}</div>
-              <button className="btn">Delete</button>
-            </div>
-          ))}
-        </div>
+      <h2>To-Do List</h2>
 
-        {/* Add Items */}
-        <form>
-          <input type="text" onChange={inputHandler} className="inpt" />
-        </form>
+      <ul>
+        {todos.map((todo, index) => (
+          <li key={index}>
+            {todo}
+            <button onClick={() => removeTodo(index)}>Remove</button>
+          </li>
+        ))}
+      </ul>
+
+      <div>
+        <input
+          type="text"
+          value={newTodo}
+          onChange={(e) => setNewTodo(e.target.value)}
+        />
+        <button onClick={addTodo}>Add</button>
       </div>
+      <p>Total Todos: {todos.length}</p>
     </div>
   );
 };
