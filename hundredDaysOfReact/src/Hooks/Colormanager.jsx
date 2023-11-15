@@ -58,7 +58,7 @@ const Colormanager = () => {
           }}
         />
         <div className="text-[#ff0000] font-bold flex gap-1">
-          <div className="underline">Note:</div>
+          <div className="underline">{error == "" ? null : "Note:"}</div>
           {error}
         </div>
         <br />
