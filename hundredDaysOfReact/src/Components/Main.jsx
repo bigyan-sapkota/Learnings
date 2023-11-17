@@ -1,10 +1,10 @@
 import React from "react";
-import Dropzonea from "../Dropzone/Dropzonea";
+import MyDropzoneComponent from "../Dropzone/MyDropzoneComponent";
 
 const Main = () => {
   return (
     <div>
-      <Dropzonea />
+      <MyDropzoneComponent />
     </div>
   );
 };
