@@ -25,9 +25,10 @@ const BookLibrary = () => {
       toast.error("Book already exists");
       setError(true);
     } else {
-      const updatedBooks = [...book, { name: bookname, author: author }];
-      setBook(updatedBooks);
+      setBook([...book, { name: bookname, author: author }]);
       setNumber(number + 1);
+      setBookName("");
+      setAuthor("");
     }
   };
 
