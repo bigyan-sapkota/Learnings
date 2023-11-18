@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { RxCross2 } from "react-icons/rx";
 import { FiPlus } from "react-icons/fi";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const BookLibrary = () => {
   const [book, setBook] = useState([
@@ -14,13 +16,14 @@ const BookLibrary = () => {
   const [bookname, setBookName] = useState("");
   const [author, setAuthor] = useState("");
   const [number, setNumber] = useState(5);
-  const [error, setError] = useState("");
+  const [error, setError] = useState(false);
 
   const addBookAndAuthor = (bookname, author) => {
     const bookExists = book.find((b) => b.name === bookname);
 
     if (bookExists) {
-      setError("The book already exists");
+      toast.error("Book already exists");
+      setError(true);
     } else {
       const updatedBooks = [...book, { name: bookname, author: author }];
       setBook(updatedBooks);
@@ -37,6 +40,20 @@ const BookLibrary = () => {
 
   return (
     <div>
+      {error ? (
+        <ToastContainer
+          position="bottom-right"
+          autoClose={5000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="light"
+        />
+      ) : null}
       <div className="p-10 h-screen border border-black flex flex-col justify-between">
         {/* BOOKS NAME */}
         <div className="mb-6">
