@@ -15,7 +15,12 @@ function Dropzonea({ className }) {
       ]);
     }
   }, []);
+
   const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop });
+
+  const removeFile = (name) => {
+    setFiles((files) => files.filter((file) => file.name !== name));
+  };
 
   return (
     <form>

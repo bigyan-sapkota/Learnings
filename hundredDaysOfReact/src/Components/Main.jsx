@@ -1,10 +1,10 @@
 import React from "react";
-import MyDropzoneComponent from "../Dropzone/MyDropzoneComponent";
+import BookLibrary from "../Hooks/BookLibrary";
 
 const Main = () => {
   return (
     <div>
-      <MyDropzoneComponent />
+      <BookLibrary />
     </div>
   );
 };
