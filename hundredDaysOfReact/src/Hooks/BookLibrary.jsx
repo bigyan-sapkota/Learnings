@@ -11,27 +11,31 @@ const BookLibrary = () => {
     { name: "The Hobbit", author: "J.R.R. Tolkien" },
   ]);
 
-  const [name, setName] = useState("");
+  const [bookname, setBookName] = useState("");
   const [author, setAuthor] = useState("");
   const [number, setNumber] = useState(5);
+  const [error, setError] = useState("");
 
-  const addBook = () => {
-    // Check if the book exists
-    // If it exists, give error. Else add the book
+  const addBookAndAuthor = (bookname, author) => {
+    const bookExists = book.find((b) => b.name === bookname);
+
+    if (bookExists) {
+      setError("The book already exists");
+    } else {
+      const updatedBooks = [...book, { name: bookname, author: author }];
+      setBook(updatedBooks);
+      setNumber(number + 1);
+    }
   };
 
-  const removeBook = () => {
-    // Use filter or splice method
-  };
+  const removeBook = () => {};
 
   return (
     <div>
       <div className="p-10 h-screen border border-black flex flex-col justify-between">
         {/* BOOKS NAME */}
         <div className="mb-6">
-          <h1 className="font-bold text-3xl mb-5">
-            Book and Their Author Name:
-          </h1>
+          <h1 className="font-bold text-3xl mb-5">Your Library:</h1>
           <ul className="grid grid-cols-3 gap-y-4 gap-x-2">
             {book.map((book, i) => (
               <li
@@ -53,24 +57,37 @@ const BookLibrary = () => {
         {/* FORM FOR ADDING BOOK */}
         <div>
           <h1 className="font-bold text-3xl mb-5">Add book to the library:</h1>
-          <div>
-            <form>
-              <input
-                type="text"
-                placeholder="Book's Name..."
-                className="border border-gray-500 rounded-md px-4 py-2 mb-3"
-              />
-              <br />
-              <input
-                type="text"
-                placeholder="Authors's Name..."
-                className="border border-gray-500 rounded-md px-4 py-2"
-              />
-            </form>
-          </div>
+          <div className="w-1/4 flex items-center justify-around">
+            <div>
+              <form>
+                <input
+                  type="text"
+                  placeholder="Book's Name..."
+                  className="border border-gray-500 rounded-md px-4 py-2 mb-3"
+                  value={bookname}
+                  onChange={(e) => {
+                    setBookName(e.target.value);
+                  }}
+                />
 
-          <div className="">
-            <FiPlus />
+                <input
+                  type="text"
+                  placeholder="Authors's Name..."
+                  className="border border-gray-500 rounded-md px-4 py-2"
+                  value={author}
+                  onChange={(e) => {
+                    setAuthor(e.target.value);
+                  }}
+                />
+              </form>
+            </div>
+
+            <button
+              className="border bg-green-500 hover:bg-green-600 hover:scale-105 h-full rounded-full text-white text-4xl p-5"
+              onClick={() => addBookAndAuthor(bookname, author)}
+            >
+              <FiPlus />
+            </button>
           </div>
         </div>
       </div>
