@@ -28,7 +28,12 @@ const BookLibrary = () => {
     }
   };
 
-  const removeBook = () => {};
+  const removeBook = (i) => {
+    const updatedBooks = [...book];
+    updatedBooks.splice(i, 1);
+    setBook(updatedBooks);
+    setNumber(number - 1);
+  };
 
   return (
     <div>
@@ -46,7 +51,12 @@ const BookLibrary = () => {
                 <cite className="text-gray-500 font-normal">
                   By {book.author}
                 </cite>
-                <button className="absolute -top-2 -right-2 text-white bg-red-500 p-1 rounded-full">
+                <button
+                  className="absolute -top-2 -right-2 text-white bg-red-500 p-1 rounded-full"
+                  onClick={() => {
+                    removeBook(i);
+                  }}
+                >
                   <RxCross2 />
                 </button>
               </li>
