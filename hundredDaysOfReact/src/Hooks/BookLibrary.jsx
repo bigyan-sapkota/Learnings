@@ -27,8 +27,6 @@ const BookLibrary = () => {
     } else {
       setBook([...book, { name: bookname, author: author }]);
       setNumber(number + 1);
-      setBookName("");
-      setAuthor("");
     }
   };
 
@@ -53,9 +51,10 @@ const BookLibrary = () => {
           draggable
           pauseOnHover
           theme="light"
+          className="shadow-md"
         />
       ) : null}
-      <div className="p-10 h-screen border border-black flex flex-col justify-between">
+      <div className="p-10 h-screen flex flex-col justify-between">
         {/* BOOKS NAME */}
         <div className="mb-6">
           <h1 className="font-bold text-3xl mb-5">Your Library:</h1>

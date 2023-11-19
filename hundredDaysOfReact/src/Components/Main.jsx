@@ -1,10 +1,10 @@
 import React from "react";
-import BookLibrary from "../Hooks/BookLibrary";
+import TaskScheduler from "../Hooks/TaskScheduler";
 
 const Main = () => {
   return (
     <div>
-      <BookLibrary />
+      <TaskScheduler />
     </div>
   );
 };
