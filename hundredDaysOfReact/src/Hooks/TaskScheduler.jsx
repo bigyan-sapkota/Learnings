@@ -14,12 +14,24 @@ const TaskScheduler = () => {
   return (
     <div>
       <div className="p-10">
-        <nav></nav>
-        <div>
+        <div className="flex justify-between px-10">
+          <h1 className="font-extrabold text-2xl ">
+            Task <span className="text-purple-600">Scheduler</span>
+          </h1>
+          <nav className="flex mb-10">
+            {tasks.map((item, i) => (
+              <button className="px-2 py-1 border-2 border-neutral-300 bg-white-700 rounded-md mr-2 text-purple-600 font-medium border-b-4 border-b-purple-600 border-r-4 border-r-purple-600 shadow-sm hover:bg-purple-600 hover:text-white hover:border-purple-600">
+                {item.category}
+              </button>
+            ))}
+          </nav>
+        </div>
+
+        <div className="flex flex-col items-center">
           {tasks.map((item, i) => (
             <div
               key={i}
-              className="p-7 shadow-md mb-8 border border-neutral-200"
+              className="p-7 shadow-md mb-8 border border-neutral-200 w-4/5"
             >
               {item.task}
             </div>
