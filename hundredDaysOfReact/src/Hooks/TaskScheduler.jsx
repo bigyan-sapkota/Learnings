@@ -3,18 +3,25 @@ import { TiTick } from "react-icons/ti";
 
 const TaskScheduler = () => {
   const [tasks, setTask] = useState([
-    { task: "Complete assingment", category: "Study", dueDate: "2023/11/25" },
-    { task: "100 pushups", category: "Workout", dueDate: "2023/11/23" },
+    { task: "Complete assingment", category: "Study", isCompleted: false },
+    { task: "100 pushups", category: "Workout", isCompleted: false },
     {
       task: "Complete studying PHP",
       category: "Coding",
-      dueDate: "2023/11/28",
+      isCompleted: false,
     },
-    { task: "Run 6 miles", category: "Workout", dueDate: "2023/12/23" },
+    { task: "Run 6 miles", category: "Workout", isCompleted: true },
   ]);
 
   const [filteredTask, setFilteredTask] = useState(tasks);
   const menuItems = ["All", "Study", "Workout", "Coding"];
+
+  const completedHandler = (index) => {
+    const updatedTasks = tasks.map((task, i) =>
+      i === index ? { ...task, isCompleted: !task.isCompleted } : task
+    );
+    setTask(updatedTasks);
+  };
 
   const categoryHandler = (selectedCategory) => {
     if (selectedCategory === "All") {
@@ -57,10 +64,18 @@ const TaskScheduler = () => {
                 className="py-5 px-8 shadow-md mb-8 border border-neutral-200 w-full hover:bg-[#fffff1]"
               >
                 <div className="flex justify-between items-center w-full gap-32">
-                  <div className="">
-                    <p>{item.task}</p>
+                  <div className="flex items-center justify-center gap-2">
+                    <p className="text-lg">{item.task}</p>
+                    <div className="text-xs bg-green-600 text-white px-1 py-0.5 rounded-md">
+                      {item.category}
+                    </div>
                   </div>
-                  <button className="bg-gray-200 rounded-full p-1 hover:scale-105 cursor-pointer">
+                  <button
+                    className={`bg-gray-200 rounded-full p-1 hover:scale-105 cursor-pointer ${
+                      item.isCompleted ? "bg-black text-white" : ""
+                    }`}
+                    onClick={() => completedHandler(i)}
+                  >
                     <TiTick />
                   </button>
                 </div>
