@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { TiTick } from "react-icons/ti";
 
 const TaskScheduler = () => {
   const [tasks, setTask] = useState([
@@ -28,7 +29,8 @@ const TaskScheduler = () => {
 
   return (
     <div>
-      <div className="p-10">
+      <div className="py-10 px-7">
+        {/* Navbar */}
         <div className="flex justify-between px-10">
           <h1 className="font-extrabold text-2xl ">
             Task <span className="text-purple-600">Scheduler</span>
@@ -46,15 +48,47 @@ const TaskScheduler = () => {
           </nav>
         </div>
 
-        <div className="flex flex-col items-center">
-          {filteredTask.map((item, i) => (
-            <div
-              key={i}
-              className="p-7 shadow-md mb-8 border border-neutral-200 w-4/5"
-            >
-              {item.task}
-            </div>
-          ))}
+        <div className="flex justify-between px-14">
+          {/* Tasks */}
+          <div className="flex flex-col items-center">
+            {filteredTask.map((item, i) => (
+              <div
+                key={i}
+                className="py-5 px-8 shadow-md mb-8 border border-neutral-200 w-full hover:bg-[#fffff1]"
+              >
+                <div className="flex justify-between items-center w-full gap-32">
+                  <div className="">
+                    <p>{item.task}</p>
+                  </div>
+                  <button className="bg-gray-200 rounded-full p-1 hover:scale-105 cursor-pointer">
+                    <TiTick />
+                  </button>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Form for adding items */}
+          <div className="pl-32 w-1/3">
+            <form className="flex flex-col">
+              <input
+                type="text"
+                className="border border-neutral-400 rounded-md px-3 py-1 mb-4"
+                placeholder="Enter the Task..."
+              />
+
+              <input
+                type="text"
+                className="border border-neutral-400 rounded-md px-3 py-1 mb-3"
+                placeholder="Enter the Task..."
+              />
+              <label className="mb-1">Due Date:</label>
+              <input
+                type="date"
+                className="border border-neutral-400 rounded-md px-3 py-1"
+              />
+            </form>
+          </div>
         </div>
       </div>
     </div>
