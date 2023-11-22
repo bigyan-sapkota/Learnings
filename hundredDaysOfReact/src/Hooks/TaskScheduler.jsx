@@ -15,7 +15,21 @@ const TaskScheduler = () => {
   ]);
 
   const [filteredTask, setFilteredTask] = useState(tasks);
-  const menuItems = ["All", "Study", "Workout", "Coding"];
+
+  const [menuItems, setMenuItems] = useState([
+    "All",
+    "Study",
+    "Workout",
+    "Coding",
+  ]);
+
+  const [newTask, setNewTask] = useState("");
+  const [taskCategory, setTaskCategory] = useState("");
+  const [isNewCategory, setIsNewCategory] = useState(false);
+
+  const addTaskHandler = () => {
+    console.log("Hello World");
+  };
 
   const completedHandler = (index) => {
     const updatedTasks = tasks.map((item, i) =>
@@ -87,22 +101,37 @@ const TaskScheduler = () => {
           {/* Form for adding items */}
           <div className="ml-32 w-1/3 border border-neutral-200 shadow-lg rounded-lg px-10 py-7">
             <h1 className="text-3xl font-bold mb-6">Add Task:</h1>
-            <form className="flex flex-col gap-">
+            <form className="flex flex-col justify-start">
               <input
                 type="text"
                 className="border border-neutral-400 rounded-md px-3 py-2 mb-4"
                 placeholder="Enter the Task..."
-                onClick={() => {
-                  (e) => {
-                    setTask;
-                  };
+                value={newTask}
+                onChange={(e) => {
+                  setNewTask(e.target.value);
                 }}
               />
-
+              <button
+                className={`w-fit border px-2 py-1 text-sm rounded-md mb-3 font-medium border-purple-600 ${
+                  isNewCategory
+                    ? "text-white bg-purple-600"
+                    : "text-purple-600 bg-white "
+                }`}
+                onClick={(event) => {
+                  event.preventDefault();
+                  setIsNewCategory(!isNewCategory);
+                }}
+              >
+                New Category
+              </button>
               <input
                 type="text"
                 className="border border-neutral-400 rounded-md px-3 py-2 mb-3"
                 placeholder="Enter the Task..."
+                value={taskCategory}
+                onChange={(e) => {
+                  setTaskCategory(e.target.value);
+                }}
               />
               <div className="flex flex-col">
                 <label className="mb-2">
