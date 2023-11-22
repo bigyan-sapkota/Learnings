@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { TiTick } from "react-icons/ti";
+import { FaPlus } from "react-icons/fa6";
 
 const TaskScheduler = () => {
-  const [tasks, setTask] = useState([
+  const [tasks, setTasks] = useState([
     { task: "Complete assingment", category: "Study", isCompleted: false },
     { task: "100 pushups", category: "Workout", isCompleted: false },
     {
@@ -17,10 +18,10 @@ const TaskScheduler = () => {
   const menuItems = ["All", "Study", "Workout", "Coding"];
 
   const completedHandler = (index) => {
-    const updatedTasks = tasks.map((task, i) =>
-      i === index ? { ...task, isCompleted: !task.isCompleted } : task
+    const updatedTasks = tasks.map((item, i) =>
+      i === index ? { ...item, isCompleted: !item.isCompleted } : item
     );
-    setTask(updatedTasks);
+    setTasks(updatedTasks);
   };
 
   const categoryHandler = (selectedCategory) => {
@@ -46,7 +47,7 @@ const TaskScheduler = () => {
             {menuItems.map((item, i) => (
               <button
                 key={i}
-                className="px-2 py-1 border-2 border-neutral-300 bg-white-700 rounded-md mr-2 text-purple-600 font-medium border-b-4 border-b-purple-600 border-r-4 border-r-purple-600 shadow-sm hover:bg-purple-600 hover:text-white hover:border-purple-600"
+                className="px-5 py-1 border-2 border-neutral-300 bg-white-700 rounded-md mr-2 text-purple-600 font-medium border-b-4 border-b-purple-600 border-r-4 border-r-purple-600 shadow-sm hover:bg-purple-600 hover:text-white hover:border-purple-600"
                 onClick={() => categoryHandler(item)}
               >
                 {item}
@@ -72,7 +73,7 @@ const TaskScheduler = () => {
                   </div>
                   <button
                     className={`bg-gray-200 rounded-full p-1 hover:scale-105 cursor-pointer ${
-                      item.isCompleted ? "bg-black text-white" : ""
+                      item.isCompleted ? "bg-blue-600 text-white" : ""
                     }`}
                     onClick={() => completedHandler(i)}
                   >
@@ -84,25 +85,40 @@ const TaskScheduler = () => {
           </div>
 
           {/* Form for adding items */}
-          <div className="pl-32 w-1/3">
-            <form className="flex flex-col">
+          <div className="ml-32 w-1/3 border border-neutral-200 shadow-lg rounded-lg px-10 py-7">
+            <h1 className="text-3xl font-bold mb-6">Add Task:</h1>
+            <form className="flex flex-col gap-">
               <input
                 type="text"
-                className="border border-neutral-400 rounded-md px-3 py-1 mb-4"
+                className="border border-neutral-400 rounded-md px-3 py-2 mb-4"
                 placeholder="Enter the Task..."
+                onClick={() => {
+                  (e) => {
+                    setTask;
+                  };
+                }}
               />
 
               <input
                 type="text"
-                className="border border-neutral-400 rounded-md px-3 py-1 mb-3"
+                className="border border-neutral-400 rounded-md px-3 py-2 mb-3"
                 placeholder="Enter the Task..."
               />
-              <label className="mb-1">Due Date:</label>
-              <input
-                type="date"
-                className="border border-neutral-400 rounded-md px-3 py-1"
-              />
+              <div className="flex flex-col">
+                <label className="mb-2">
+                  Due Date: <span className="text-red-700 font-medium">*</span>
+                </label>
+                <input
+                  type="date"
+                  className="border border-neutral-400 rounded-md px-3 py-1"
+                />
+              </div>
             </form>
+            <div className="flex items-center justify-center h-28">
+              <div className="bg-green-500 w-20 h-20 flex items-center justify-center rounded-full text-white text-3xl cursor-pointer hover:scale-110 hover:bg-green-600">
+                <FaPlus />
+              </div>
+            </div>
           </div>
         </div>
       </div>
