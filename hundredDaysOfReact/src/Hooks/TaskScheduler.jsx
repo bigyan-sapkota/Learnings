@@ -26,9 +26,23 @@ const TaskScheduler = () => {
   const [newTask, setNewTask] = useState("");
   const [taskCategory, setTaskCategory] = useState("");
   const [isNewCategory, setIsNewCategory] = useState(false);
+  const [dueDate, setDueDate] = useState("");
 
-  const addTaskHandler = () => {
-    console.log("Hello World");
+  const addTaskHandler = (e) => {
+    e.preventDefault(); // Prevent form submission
+
+    console.log("Current values before adding task:", {
+      newTask,
+      taskCategory,
+      tasks, // Check the current tasks array before update
+    });
+
+    setTasks((prevTasks) => [
+      ...prevTasks,
+      { task: newTask, category: taskCategory, isCompleted: false },
+    ]);
+
+    console.log("Updated tasks after adding task:", tasks); // Check the tasks array after update
   };
 
   const completedHandler = (index) => {
@@ -104,7 +118,7 @@ const TaskScheduler = () => {
             <form className="flex flex-col justify-start">
               <input
                 type="text"
-                className="border border-neutral-400 rounded-md px-3 py-2 mb-4"
+                className="border border-neutral-400 rounded-md px-3 py-2 mb-4 outline-none "
                 placeholder="Enter the Task..."
                 value={newTask}
                 onChange={(e) => {
@@ -126,7 +140,7 @@ const TaskScheduler = () => {
               </button>
               <input
                 type="text"
-                className="border border-neutral-400 rounded-md px-3 py-2 mb-3"
+                className="border border-neutral-400 rounded-md px-3 py-2 mb-3 outline-none"
                 placeholder="Enter the Task..."
                 value={taskCategory}
                 onChange={(e) => {
@@ -140,14 +154,21 @@ const TaskScheduler = () => {
                 <input
                   type="date"
                   className="border border-neutral-400 rounded-md px-3 py-1"
+                  value={dueDate}
+                  onChange={(e) => {
+                    setDueDate(e.target.value);
+                  }}
                 />
               </div>
-            </form>
-            <div className="flex items-center justify-center h-28">
-              <div className="bg-green-500 w-20 h-20 flex items-center justify-center rounded-full text-white text-3xl cursor-pointer hover:scale-110 hover:bg-green-600">
-                <FaPlus />
+              <div className="flex items-center justify-center pt-4">
+                <button
+                  className="bg-green-500 w-20 h-20 flex items-center justify-center rounded-full text-white text-3xl hover:scale-110 hover:bg-green-600"
+                  onClick={addTaskHandler}
+                >
+                  <FaPlus />
+                </button>
               </div>
-            </div>
+            </form>
           </div>
         </div>
       </div>
