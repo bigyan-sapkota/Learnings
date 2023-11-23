@@ -55,13 +55,19 @@ const TaskScheduler = () => {
 
   const categoryHandler = (selectedCategory) => {
     if (selectedCategory === "All") {
-      setFilteredTask(tasks);
+      setTasks(tasks);
     } else {
       const filtered = tasks.filter(
         (task) => task.category === selectedCategory
       );
-      setFilteredTask(filtered);
+      setTasks(filtered);
     }
+  };
+
+  const deleteHandler = (i) => {
+    const deleteHandlerTask = [...tasks];
+    deleteHandlerTask.splice(i, 1);
+    setTasks(deleteHandlerTask);
   };
 
   return (
@@ -88,7 +94,7 @@ const TaskScheduler = () => {
         <div className="flex justify-between px-14">
           {/* Tasks */}
           <div className="flex flex-col items-center">
-            {filteredTask.map((item, i) => (
+            {tasks.map((item, i) => (
               <div
                 key={i}
                 className="py-5 px-8 shadow-md mb-8 border border-neutral-200 w-full hover:bg-[#fffff1] relative"
@@ -109,9 +115,12 @@ const TaskScheduler = () => {
                     <TiTick />
                   </button>
                 </div>
-                <div className="absolute -top-3 -right-2 w-4 h-4 p-3 bg-red-500 text-white border rounded-full flex items-center justify-center">
+                <button
+                  className="absolute -top-3 -right-2 w-4 h-4 p-3 bg-red-500 text-white border rounded-full flex items-center justify-center"
+                  onClick={() => deleteHandler(i)} // Pass the index 'i'
+                >
                   x
-                </div>
+                </button>
               </div>
             ))}
           </div>
