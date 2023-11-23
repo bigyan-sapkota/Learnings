@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { TiTick } from "react-icons/ti";
 import { FaPlus } from "react-icons/fa6";
+import { LuDelete } from "react-icons/lu";
 
 const TaskScheduler = () => {
   const [tasks, setTasks] = useState([
@@ -90,7 +91,7 @@ const TaskScheduler = () => {
             {filteredTask.map((item, i) => (
               <div
                 key={i}
-                className="py-5 px-8 shadow-md mb-8 border border-neutral-200 w-full hover:bg-[#fffff1]"
+                className="py-5 px-8 shadow-md mb-8 border border-neutral-200 w-full hover:bg-[#fffff1] relative"
               >
                 <div className="flex justify-between items-center w-full gap-32">
                   <div className="flex items-center justify-center gap-2">
@@ -107,6 +108,9 @@ const TaskScheduler = () => {
                   >
                     <TiTick />
                   </button>
+                </div>
+                <div className="absolute -top-3 -right-2 w-4 h-4 p-3 bg-red-500 text-white border rounded-full flex items-center justify-center">
+                  x
                 </div>
               </div>
             ))}
