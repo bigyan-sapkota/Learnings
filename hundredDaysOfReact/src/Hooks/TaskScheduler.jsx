@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { TiTick } from "react-icons/ti";
 import { FaPlus } from "react-icons/fa6";
-import { LuDelete } from "react-icons/lu";
+a;
 
 const TaskScheduler = () => {
   const [tasks, setTasks] = useState([
@@ -14,8 +14,6 @@ const TaskScheduler = () => {
     },
     { task: "Run 6 miles", category: "Workout", isCompleted: true },
   ]);
-
-  const [filteredTask, setFilteredTask] = useState(tasks);
 
   const [menuItems, setMenuItems] = useState([
     "All",
@@ -30,20 +28,15 @@ const TaskScheduler = () => {
   const [dueDate, setDueDate] = useState("");
 
   const addTaskHandler = (e) => {
-    e.preventDefault(); // Prevent form submission
+    e.preventDefault();
 
-    console.log("Current values before adding task:", {
-      newTask,
-      taskCategory,
-      tasks, // Check the current tasks array before update
-    });
-
+    if (isNewCategory) {
+      setMenuItems([...menuItems, taskCategory]);
+    }
     setTasks((prevTasks) => [
       ...prevTasks,
       { task: newTask, category: taskCategory, isCompleted: false },
     ]);
-
-    console.log("Updated tasks after adding task:", tasks); // Check the tasks array after update
   };
 
   const completedHandler = (index) => {
