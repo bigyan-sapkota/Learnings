@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { TiTick } from "react-icons/ti";
 import { FaPlus } from "react-icons/fa6";
-import { ToastContainer, toast } from "react-toastify";
+import { MdOutlineDateRange } from "react-icons/md";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const TaskScheduler = () => {
@@ -45,16 +46,6 @@ const TaskScheduler = () => {
       i === index ? { ...item, isCompleted: !item.isCompleted } : item
     );
     setTasks(updatedTasks);
-    toast.success("🦄 Wow so easy!", {
-      position: "bottom-left",
-      autoClose: 5000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "colored",
-    });
   };
 
   const categoryHandler = (selectedCategory) => {
@@ -101,7 +92,7 @@ const TaskScheduler = () => {
             {tasks.map((item, i) => (
               <div
                 key={i}
-                className="py-5 px-8 shadow-md mb-8 border border-neutral-200 w-full hover:bg-[#fffff1] relative"
+                className="py-5 px-8 shadow-md mb-8 border border-neutral-300 w-full hover:bg-[#fffff1] relative"
               >
                 <div className="flex justify-between items-center w-full gap-32">
                   <div className="flex items-center justify-center gap-2">
@@ -127,6 +118,10 @@ const TaskScheduler = () => {
                 >
                   x
                 </button>
+                <div className="absolute -top-4 -left-2 bg-purple-600 border border-neutral-500 shadow-md px-2.5 py-0.5 flex items-center gap-2 rounded-md text-white text-sm">
+                  <MdOutlineDateRange />
+                  2023-10-11
+                </div>
               </div>
             ))}
           </div>
