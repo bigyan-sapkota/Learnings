@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { TiTick } from "react-icons/ti";
 import { FaPlus } from "react-icons/fa6";
-a;
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const TaskScheduler = () => {
   const [tasks, setTasks] = useState([
@@ -44,6 +45,16 @@ const TaskScheduler = () => {
       i === index ? { ...item, isCompleted: !item.isCompleted } : item
     );
     setTasks(updatedTasks);
+    toast.success("🦄 Wow so easy!", {
+      position: "bottom-left",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+    });
   };
 
   const categoryHandler = (selectedCategory) => {
@@ -100,8 +111,10 @@ const TaskScheduler = () => {
                     </div>
                   </div>
                   <button
-                    className={`bg-gray-200 rounded-full p-1 hover:scale-105 cursor-pointer ${
-                      item.isCompleted ? "bg-blue-600 text-white" : ""
+                    className={`rounded-full p-1 hover:scale-105 cursor-pointer ${
+                      item.isCompleted
+                        ? "bg-blue-600 text-white"
+                        : "bg-gray-200 text-black"
                     }`}
                     onClick={() => completedHandler(i)}
                   >
@@ -119,7 +132,7 @@ const TaskScheduler = () => {
           </div>
 
           {/* Form for adding items */}
-          <div className="ml-32 w-1/3 border border-neutral-200 shadow-lg rounded-lg px-10 py-7">
+          <div className="ml-32 w-1/3 border border-neutral-200 shadow-lg rounded-lg px-10 py-7 max-h-[420px]">
             <h1 className="text-3xl font-bold mb-6">Add Task:</h1>
             <form className="flex flex-col justify-start">
               <input
