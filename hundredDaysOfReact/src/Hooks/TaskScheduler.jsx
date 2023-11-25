@@ -116,7 +116,7 @@ const TaskScheduler = () => {
               >
                 <div className="flex justify-between items-center w-full gap-32">
                   <div className="flex items-center justify-center gap-2">
-                    <p className="text-lg">{item.task}</p>
+                    <p className="text-lg max-w-[250px]">{item.task}</p>
                     <div className="text-xs bg-green-600 text-white px-1 py-0.5 rounded-md">
                       {item.category}
                     </div>
