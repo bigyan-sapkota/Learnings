@@ -158,6 +158,7 @@ const TaskScheduler = () => {
                 onChange={(e) => {
                   setNewTask(e.target.value);
                 }}
+                required
               />
               <button
                 className={`w-fit border px-2 py-1 text-sm rounded-md mb-3 font-medium border-purple-600 ${
@@ -180,6 +181,7 @@ const TaskScheduler = () => {
                 onChange={(e) => {
                   setTaskCategory(e.target.value);
                 }}
+                required
               />
               <div className="flex flex-col">
                 <label className="mb-2">
@@ -192,6 +194,7 @@ const TaskScheduler = () => {
                   onChange={(e) => {
                     setDueDate(e.target.value);
                   }}
+                  required
                 />
               </div>
               <div className="flex items-center justify-center pt-4">
