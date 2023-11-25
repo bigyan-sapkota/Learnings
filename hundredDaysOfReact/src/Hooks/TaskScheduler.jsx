@@ -2,19 +2,34 @@ import React, { useState } from "react";
 import { TiTick } from "react-icons/ti";
 import { FaPlus } from "react-icons/fa6";
 import { MdOutlineDateRange } from "react-icons/md";
-import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const TaskScheduler = () => {
   const [tasks, setTasks] = useState([
-    { task: "Complete assingment", category: "Study", isCompleted: false },
-    { task: "100 pushups", category: "Workout", isCompleted: false },
+    {
+      task: "Complete assingment",
+      category: "Study",
+      isCompleted: false,
+      dueDate: "2023-12-05",
+    },
+    {
+      task: "100 pushups",
+      category: "Workout",
+      isCompleted: false,
+      dueDate: "2024-01-22",
+    },
     {
       task: "Complete studying PHP",
       category: "Coding",
       isCompleted: false,
+      dueDate: "2023-11-29",
     },
-    { task: "Run 6 miles", category: "Workout", isCompleted: true },
+    {
+      task: "Run 6 miles",
+      category: "Workout",
+      isCompleted: false,
+      dueDate: "2023-12-19",
+    },
   ]);
 
   const [menuItems, setMenuItems] = useState([
@@ -32,12 +47,17 @@ const TaskScheduler = () => {
   const addTaskHandler = (e) => {
     e.preventDefault();
 
-    if (isNewCategory) {
+    if (isNewCategory && !menuItems.includes(taskCategory)) {
       setMenuItems([...menuItems, taskCategory]);
     }
     setTasks((prevTasks) => [
       ...prevTasks,
-      { task: newTask, category: taskCategory, isCompleted: false },
+      {
+        task: newTask,
+        category: taskCategory,
+        isCompleted: false,
+        dueDate: dueDate,
+      },
     ]);
   };
 
@@ -120,7 +140,7 @@ const TaskScheduler = () => {
                 </button>
                 <div className="absolute -top-4 -left-2 bg-purple-600 border border-neutral-500 shadow-md px-2.5 py-0.5 flex items-center gap-2 rounded-md text-white text-sm">
                   <MdOutlineDateRange />
-                  2023-10-11
+                  {item.dueDate}
                 </div>
               </div>
             ))}
@@ -155,7 +175,7 @@ const TaskScheduler = () => {
               <input
                 type="text"
                 className="border border-neutral-400 rounded-md px-3 py-2 mb-3 outline-none"
-                placeholder="Enter the Task..."
+                placeholder="Enter the Category..."
                 value={taskCategory}
                 onChange={(e) => {
                   setTaskCategory(e.target.value);
