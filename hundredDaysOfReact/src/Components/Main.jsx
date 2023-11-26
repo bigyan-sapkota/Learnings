@@ -1,12 +1,7 @@
 import React from "react";
-import TaskScheduler from "../Hooks/TaskScheduler";
 
 const Main = () => {
-  return (
-    <div>
-      <TaskScheduler />
-    </div>
-  );
+  return <div></div>;
 };
 
 export default Main;
