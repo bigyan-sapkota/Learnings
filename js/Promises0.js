@@ -21,4 +21,22 @@
 
 // getServerStatus();
 
-// A Promise is a native JavaScript object which has two traits: 1) It receives a single argument which is a function.
+// A Promise is a native JavaScript object which has two traits: 1) It receives a single argument which is a function. The function needs to have two arguments, a resolve funcion and  a reject function. The code written inside the promise needs to use one of these two functions. 2) It can be waited on using the then method(and other similar method, or the await statement.
+// An asynchronous function is defined by a function, which instead of returning the value it was supposed to return, it returns a Promise object, which will eventually resolve and give the user the answer.
+
+// The function below returns a Promise instead of value:
+
+function sumAsync(x, y) {
+  const p = new Promise((resolve, reject) => {
+    // this resolves the promise we just created
+    resolve(x + y);
+  });
+
+  //   This returns the promise not value
+  return p;
+}
+
+// Using the function
+sumAsync(5, 7).then((result) => {
+  console.log("The result of addition is", result);
+});
