@@ -60,8 +60,7 @@ function Dropzonea({ className }) {
         </div>
 
         {/* Accepted files */}
-        <h3>Accepted Files</h3>
-        {/* <h3 className="title text-lg font-semibold text-neutral-600 mt-10 border-b pb-3">
+        <h3 className="title text-lg font-semibold text-neutral-600 mt-10 border-b pb-3">
           Accepted Files
         </h3>
         <ul className="mt-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-10">
@@ -89,7 +88,7 @@ function Dropzonea({ className }) {
               </p>
             </li>
           ))}
-        </ul> */}
+        </ul>
 
         {/* Rejected Files */}
       </section>
