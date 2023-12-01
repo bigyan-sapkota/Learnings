@@ -1,12 +1,10 @@
 import React from "react";
-import CourseForm from "../Zustand/CourseForm";
-import CourseList from "../Zustand/CourseList";
+import MyDropzoneComponent from "../Dropzone/MyDropzoneComponent";
 
 const Main = () => {
   return (
     <div>
-      <CourseList />
-      <CourseForm />
+      <MyDropzoneComponent />
     </div>
   );
 };
