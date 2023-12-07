@@ -1,10 +1,10 @@
 import React from "react";
-import MyDropzoneComponent from "../Dropzone/MyDropzoneComponent";
+import ExerciseTwo from "../PedroTech-tutorial/ExerciseTwo";
 
 const Main = () => {
   return (
     <div>
-      <MyDropzoneComponent />
+      <ExerciseTwo />
     </div>
   );
 };
