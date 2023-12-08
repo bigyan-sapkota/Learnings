@@ -1,10 +1,10 @@
 import React from "react";
-import ExerciseTwo from "../PedroTech-tutorial/ExerciseTwo";
+import TodoList from "../PedroTech-tutorial/TodoList/TodoList";
 
 const Main = () => {
   return (
     <div>
-      <ExerciseTwo />
+      <TodoList />
     </div>
   );
 };

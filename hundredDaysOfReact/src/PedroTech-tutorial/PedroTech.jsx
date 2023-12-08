@@ -1,24 +1,24 @@
 import React from "react";
-import User from "./User";
+import { useState } from "react";
 
 const PedroTech = () => {
-  const users = [
-    { name: "Bigyan", age: 21 },
-    { name: "Sankalpa", age: 22 },
-    { name: "Chara", age: 2 },
-  ];
-  return (
-    <div>
-      <ul>
-        {users.map((user, i) => (
-          <User key={i} name={user.name} age={user.age} />
-        ))}
-      </ul>
-    </div>
-  );
+  return <div></div>;
 };
 
 export default PedroTech;
+
+// const [textcolor, setTextcolor] = useState("black");
+
+//   const changeHandler = () => {
+//     setTextcolor(textcolor === "black" ? "red" : "black");
+//   };
+
+//   return (
+//     <div>
+//       <h1 style={{ color: textcolor }}>Hi I am Bigyan</h1>
+//       <button onClick={changeHandler}>Change</button>
+//     </div>
+//   );
 
 // import React from "react";
 // import styles from "../Bigyan.module.css";
@@ -63,3 +63,77 @@ export default PedroTech;
 // };
 
 // export default PedroTech;
+
+// import React from "react";
+// import User from "./User";
+
+// const PedroTech = () => {
+//   const users = [
+//     { name: "Bigyan", age: 21 },
+//     { name: "Sankalpa", age: 22 },
+//     { name: "Chara", age: 2 },
+//   ];
+//   return (
+//     <div>
+//       <ul>
+//         {users.map((user, i) => (
+//           <User key={i} name={user.name} age={user.age} />
+//         ))}
+//       </ul>
+//     </div>
+//   );
+// };
+
+// export default PedroTech;
+
+// import React from "react";
+// import { useState } from "react";
+
+// const PedroTech = () => {
+//   const [age, setAge] = useState(0);
+
+//   const increaseAge = () => {
+//     if (age == 5) {
+//       setAge(5);
+//     } else {
+//       setAge(age + 1);
+//     }
+//   };
+
+//   const decreaseAge = () => {
+//     if (age == 0) {
+//       setAge(0);
+//     } else {
+//       setAge(age - 1);
+//     }
+//   };
+
+//   return (
+//     <div>
+//       {age}
+//       <br />
+//       <button onClick={increaseAge}>Increase age</button>
+//       <button onClick={decreaseAge}>Decrease age</button>
+//     </div>
+//   );
+// };
+
+// export default PedroTech;
+
+// const [name, setName] = useState("");
+
+//   const handleInputChange = (event) => {
+//     setName(event.target.value);
+//   };
+
+//   return (
+//     <div>
+//       <input
+//         type="text"
+//         placeholder="Enter Your Name.."
+//         value={name}
+//         onChange={handleInputChange}
+//       />
+//       {name}
+//     </div>
+//   );
