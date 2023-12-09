@@ -1,12 +1,32 @@
 import React from "react";
-import { useState } from "react";
 
 const PedroTech = () => {
-  return <div></div>;
+  return <div>PedroTech</div>;
 };
 
 export default PedroTech;
 
+// import React from "react";
+// import { useState, useEffect } from "react";
+// import Text from "./Text";
+
+// const PedroTech = () => {
+//   const [showText, setShowText] = useState(false);
+//   return (
+//     <div>
+//       <button
+//         onClick={() => {
+//           setShowText(!showText);
+//         }}
+//       >
+//         Show Text
+//       </button>
+//       {showText && <Text />}
+//     </div>
+//   );
+// };
+
+// export default PedroTech;
 // const [textcolor, setTextcolor] = useState("black");
 
 //   const changeHandler = () => {

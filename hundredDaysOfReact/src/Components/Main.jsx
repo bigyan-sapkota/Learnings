@@ -1,10 +1,12 @@
 import React from "react";
-import TodoList from "../PedroTech-tutorial/TodoList/TodoList";
+import PedroTech from "../PedroTech-tutorial/PedroTech";
+import CatFact from "../PedroTech-tutorial/CatFact/CatFact";
+import AgePredictor from "../PedroTech-tutorial/AgePredictor/AgePredictor";
 
 const Main = () => {
   return (
     <div>
-      <TodoList />
+      <AgePredictor />
     </div>
   );
 };
