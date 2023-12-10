@@ -1,7 +1,35 @@
-import React from "react";
+import React, { useState, createContext } from "react";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import Home from "./pages/Home";
+import Menu from "./pages/Menu";
+import Contact from "./pages/Contact";
+import Profile from "./pages/Profile";
+
+export const AppContext = createContext();
 
 const PedroTech = () => {
-  return <div>PedroTech</div>;
+  const [username, setUsername] = useState("Bigyan");
+  return (
+    <div>
+      <AppContext.Provider value={{ username, setUsername }}>
+        <BrowserRouter>
+          <div>
+            <Link to="/">Home</Link>
+            <Link to="/profile">Profile</Link>
+            <Link to="/menu">Menu</Link>
+            <Link to="/contact">Contact</Link>
+          </div>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/menu" element={<Menu />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="*" element={<pre>Error 404 Page Not Found</pre>} />
+          </Routes>
+        </BrowserRouter>
+      </AppContext.Provider>
+    </div>
+  );
 };
 
 export default PedroTech;

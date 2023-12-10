@@ -6,7 +6,7 @@ import AgePredictor from "../PedroTech-tutorial/AgePredictor/AgePredictor";
 const Main = () => {
   return (
     <div>
-      <AgePredictor />
+      <PedroTech />
     </div>
   );
 };
