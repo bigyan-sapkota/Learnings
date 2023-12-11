@@ -1,11 +1,17 @@
 import { useQuery } from "@tanstack/react-query";
-import { getPost } from "./posts.js";
-import { getUser } from "./user.js";
+import { getPost } from "./posts";
+import { getUser } from "./user";
 
 export default function Post({ id }) {
   const postQuery = useQuery({
     queryKey: ["posts", id],
     queryFn: () => getPost(id),
+  });
+
+  const userQuery = useQuery({
+    queryKey: ["users", postQuery?.data?.userId],
+    enabled: postQuery?.data?.userId != null,
+    queryFn: () => getUser(postQuery.data.userId),
   });
 
   if (postQuery.status === "loading") return <h1>Loading...</h1>;
@@ -14,17 +20,18 @@ export default function Post({ id }) {
   }
 
   return (
-    <div>
-      <h1>{postQuery.title}</h1>
-      <small>
-        {postQuery.userId}
-        {useQuery.isLoading
-          ? "Loading User..."
-          : useQuery.isError
-          ? "Error Loading User"
-          : useQuery.name}
-      </small>
-      <p>{postQuery.body}</p>
-    </div>
+    <>
+      <h1>
+        {postQuery.data.title} <br />
+        <small>
+          {userQuery.isLoading
+            ? "Loading User..."
+            : userQuery.isError
+            ? "Error Loading User"
+            : userQuery.data.name}
+        </small>
+      </h1>
+      <p>{postQuery.data.body}</p>
+    </>
   );
 }
