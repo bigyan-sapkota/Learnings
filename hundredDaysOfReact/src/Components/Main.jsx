@@ -1,12 +1,11 @@
 import React from "react";
 import PedroTech from "../PedroTech-tutorial/PedroTech";
-import CatFact from "../PedroTech-tutorial/CatFact/CatFact";
-import AgePredictor from "../PedroTech-tutorial/AgePredictor/AgePredictor";
+import LearnReactQueryTwo from "../ReactQuery/LearnReactQueryTwo";
 
 const Main = () => {
   return (
     <div>
-      <PedroTech />
+      <LearnReactQueryTwo />
     </div>
   );
 };

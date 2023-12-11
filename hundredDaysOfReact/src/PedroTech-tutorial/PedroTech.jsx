@@ -1,34 +1,32 @@
-import React, { useState, createContext } from "react";
+import React from "react";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import Home from "./pages/Home";
 import Menu from "./pages/Menu";
 import Contact from "./pages/Contact";
-import Profile from "./pages/Profile";
-
-export const AppContext = createContext();
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 const PedroTech = () => {
-  const [username, setUsername] = useState("Bigyan");
+  const client = new QueryClient();
+
   return (
-    <div>
-      <AppContext.Provider value={{ username, setUsername }}>
+    <QueryClientProvider client={client}>
+      <div>
         <BrowserRouter>
           <div>
             <Link to="/">Home</Link>
-            <Link to="/profile">Profile</Link>
             <Link to="/menu">Menu</Link>
             <Link to="/contact">Contact</Link>
           </div>
+
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/profile" element={<Profile />} />
             <Route path="/menu" element={<Menu />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="*" element={<pre>Error 404 Page Not Found</pre>} />
           </Routes>
         </BrowserRouter>
-      </AppContext.Provider>
-    </div>
+      </div>
+    </QueryClientProvider>
   );
 };
 
