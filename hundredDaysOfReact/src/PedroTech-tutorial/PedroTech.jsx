@@ -1,59 +1,92 @@
 import React from "react";
-import * as yup from "yup";
-import "../index.css";
-import { useForm } from "react-hook-form";
-import { yupResolver } from "@hookform/resolvers/yup";
+import { useCounter } from "./useCounter";
+import { useState } from "react";
 
 const PedroTech = () => {
-  const schema = yup.object().shape({
-    fullName: yup.string().required("Your Full Name is required"),
-    email: yup.string().email().required(),
-    age: yup.number().positive().integer().min(18).required(),
-    password: yup.string().min(4).max(20).required(),
-    confirmPassword: yup
-      .string()
-      .oneOf([yup.ref("password"), null], "Passwords don't match")
-      .required(),
-  });
-
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm({
-    resolver: yupResolver(schema),
-  });
-
-  const onSubmit = (data) => {
-    console.log(data);
-  };
-
+  const [count, inc, dec, res] = useCounter(5);
   return (
-    <form className="flex" onSubmit={handleSubmit(onSubmit)}>
-      <input type="text" placeholder="Full Name..." {...register("fullName")} />
-      <p className="text-red">{errors.fullName?.message}</p>
-      <input type="text" placeholder="Email..." {...register("email")} />
-      <p className="text-red">{errors.email?.message}</p>
-      <input type="number" name="" placeholder="Age..." {...register("age")} />
-      <p className="text-red">{errors.age?.message}</p>
-      <input
-        type="password"
-        placeholder="Password..."
-        {...register("password")}
-      />
-      <p className="text-red">{errors.password?.message}</p>
-      <input
-        type="password"
-        placeholder="Confirm Password..."
-        {...register("confirmPassword")}
-      />
-      <p className="text-red">{errors.confirmPassword?.message}</p>
-      <input type="submit" value="Submit" />
-    </form>
+    <div>
+      {count}
+      <button onClick={inc}>Incerease</button>
+      <button onClick={dec}>Decrease</button>
+      <button onClick={res}>Reset</button>
+    </div>
   );
 };
 
 export default PedroTech;
+
+// import React, { useState } from "react";
+// import { useToggle } from "./useToggle";
+
+// const PedroTech = () => {
+//   const [isVisible, toggle] = useToggle();
+//   return (
+//     <div>
+//       <button onClick={toggle}>{isVisible ? "Hide" : "Show"}</button>
+//       {isVisible && <h1>Hidden text</h1>}
+//     </div>
+//   );
+// };
+
+// export default PedroTech;
+
+// import React from "react";
+// import * as yup from "yup";
+// import "../index.css";
+// import { useForm } from "react-hook-form";
+// import { yupResolver } from "@hookform/resolvers/yup";
+
+// const PedroTech = () => {
+//   const schema = yup.object().shape({
+//     fullName: yup.string().required("Your Full Name is required"),
+//     email: yup.string().email().required(),
+//     age: yup.number().positive().integer().min(18).required(),
+//     password: yup.string().min(4).max(20).required(),
+//     confirmPassword: yup
+//       .string()
+//       .oneOf([yup.ref("password"), null], "Passwords don't match")
+//       .required(),
+//   });
+
+//   const {
+//     register,
+//     handleSubmit,
+//     formState: { errors },
+//   } = useForm({
+//     resolver: yupResolver(schema),
+//   });
+
+//   const onSubmit = (data) => {
+//     console.log(data);
+//   };
+
+//   return (
+//     <form className="flex" onSubmit={handleSubmit(onSubmit)}>
+//       <input type="text" placeholder="Full Name..." {...register("fullName")} />
+//       <p className="text-red">{errors.fullName?.message}</p>
+//       <input type="text" placeholder="Email..." {...register("email")} />
+//       <p className="text-red">{errors.email?.message}</p>
+//       <input type="number" name="" placeholder="Age..." {...register("age")} />
+//       <p className="text-red">{errors.age?.message}</p>
+//       <input
+//         type="password"
+//         placeholder="Password..."
+//         {...register("password")}
+//       />
+//       <p className="text-red">{errors.password?.message}</p>
+//       <input
+//         type="password"
+//         placeholder="Confirm Password..."
+//         {...register("confirmPassword")}
+//       />
+//       <p className="text-red">{errors.confirmPassword?.message}</p>
+//       <input type="submit" value="Submit" />
+//     </form>
+//   );
+// };
+
+// export default PedroTech;
 
 // import React from "react";
 // import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
