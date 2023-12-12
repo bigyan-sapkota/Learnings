@@ -1,21 +1,41 @@
 import React from "react";
-import { useCounter } from "./useCounter";
-import { useState } from "react";
+import { Person } from "./Person";
 
-const PedroTech = () => {
-  const [count, inc, dec, res] = useCounter(5);
+export const PedroTech = () => {
   return (
     <div>
-      {count}
-      <button onClick={inc}>Incerease</button>
-      <button onClick={dec}>Decrease</button>
-      <button onClick={res}>Reset</button>
+      <div>
+        <Person
+          name="Bigyan"
+          email="bigyansapkota@gmail.com"
+          age={21}
+          isMarried={false}
+          friends={["Bigyan", "Sapkota", "has", "no", "friends"]}
+        />
+      </div>
     </div>
   );
 };
 
 export default PedroTech;
 
+// import React from "react";
+// import { useCounter } from "./useCounter";
+// import { useState } from "react";
+
+// const PedroTech = () => {
+//   const [count, inc, dec, res] = useCounter(5);
+//   return (
+//     <div>
+//       {count}
+//       <button onClick={inc}>Incerease</button>
+//       <button onClick={dec}>Decrease</button>
+//       <button onClick={res}>Reset</button>
+//     </div>
+//   );
+// };
+
+// export default PedroTech;
 // import React, { useState } from "react";
 // import { useToggle } from "./useToggle";
 
