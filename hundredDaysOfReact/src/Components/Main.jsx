@@ -5,7 +5,7 @@ import LearnReactQueryTwo from "../ReactQuery/LearnReactQueryTwo";
 const Main = () => {
   return (
     <div>
-      <LearnReactQueryTwo />
+      <PedroTech />
     </div>
   );
 };

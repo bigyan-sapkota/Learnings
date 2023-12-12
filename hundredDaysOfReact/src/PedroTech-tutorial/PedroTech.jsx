@@ -1,37 +1,93 @@
 import React from "react";
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
-import Home from "./pages/Home";
-import Menu from "./pages/Menu";
-import Contact from "./pages/Contact";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import * as yup from "yup";
+import "../index.css";
+import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
 
 const PedroTech = () => {
-  const client = new QueryClient();
+  const schema = yup.object().shape({
+    fullName: yup.string().required("Your Full Name is required"),
+    email: yup.string().email().required(),
+    age: yup.number().positive().integer().min(18).required(),
+    password: yup.string().min(4).max(20).required(),
+    confirmPassword: yup
+      .string()
+      .oneOf([yup.ref("password"), null], "Passwords don't match")
+      .required(),
+  });
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
+    resolver: yupResolver(schema),
+  });
+
+  const onSubmit = (data) => {
+    console.log(data);
+  };
 
   return (
-    <QueryClientProvider client={client}>
-      <div>
-        <BrowserRouter>
-          <div>
-            <Link to="/">Home</Link>
-            <Link to="/menu">Menu</Link>
-            <Link to="/contact">Contact</Link>
-          </div>
-
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/menu" element={<Menu />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="*" element={<pre>Error 404 Page Not Found</pre>} />
-          </Routes>
-        </BrowserRouter>
-      </div>
-    </QueryClientProvider>
+    <form className="flex" onSubmit={handleSubmit(onSubmit)}>
+      <input type="text" placeholder="Full Name..." {...register("fullName")} />
+      <p className="text-red">{errors.fullName?.message}</p>
+      <input type="text" placeholder="Email..." {...register("email")} />
+      <p className="text-red">{errors.email?.message}</p>
+      <input type="number" name="" placeholder="Age..." {...register("age")} />
+      <p className="text-red">{errors.age?.message}</p>
+      <input
+        type="password"
+        placeholder="Password..."
+        {...register("password")}
+      />
+      <p className="text-red">{errors.password?.message}</p>
+      <input
+        type="password"
+        placeholder="Confirm Password..."
+        {...register("confirmPassword")}
+      />
+      <p className="text-red">{errors.confirmPassword?.message}</p>
+      <input type="submit" value="Submit" />
+    </form>
   );
 };
 
 export default PedroTech;
 
+// import React from "react";
+// import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+// import Home from "./pages/Home";
+// import Menu from "./pages/Menu";
+// import Contact from "./pages/Contact";
+// import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+
+// const PedroTech = () => {
+//   const client = new QueryClient();
+
+//   return (
+//     <QueryClientProvider client={client}>
+//       <div>
+//         <BrowserRouter>
+//           <div>
+//             <Link to="/">Home</Link>
+//             <Link to="/menu">Menu</Link>
+//             <Link to="/contact">Contact</Link>
+//           </div>
+
+//           <Routes>
+//             <Route path="/" element={<Home />} />
+//             <Route path="/menu" element={<Menu />} />
+//             <Route path="/contact" element={<Contact />} />
+//             <Route path="*" element={<pre>Error 404 Page Not Found</pre>} />
+//           </Routes>
+//         </BrowserRouter>
+//       </div>
+//     </QueryClientProvider>
+//   );
+// };
+
+// export default PedroTech;
 // import React from "react";
 // import { useState, useEffect } from "react";
 // import Text from "./Text";
